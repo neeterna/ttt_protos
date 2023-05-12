@@ -2,7 +2,7 @@ syntax = "proto3";
 
 package services.auth.v1;
 
-service AuthService {
+service Auth {
   rpc SignUp(SignUpRequest) returns (SignUpResponse);
   rpc SignIn(SignInRequest) returns (SignInResponse);
   rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
