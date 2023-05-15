@@ -1,12 +1,6 @@
 syntax = "proto3";
 
-package services.auth.v1;
-
-service Auth {
-  rpc SignUp(SignUpRequest) returns (SignUpResponse);
-  rpc SignIn(SignInRequest) returns (SignInResponse);
-  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse);
-}
+package auth;
 
 message SignUpRequest {
   string username = 1;
@@ -35,3 +29,10 @@ message RefreshTokenRequest {
 message RefreshTokenResponse {
   string access_token = 1;
 }
+
+service Auth {
+  rpc SignUp(SignUpRequest) returns (SignUpResponse) {};
+  rpc SignIn(SignInRequest) returns (SignInResponse) {};
+  rpc RefreshToken(RefreshTokenRequest) returns (RefreshTokenResponse) {};
+}
+
